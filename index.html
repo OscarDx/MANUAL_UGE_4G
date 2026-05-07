@@ -8,7 +8,7 @@
 		body {
 		  margin: 0;
 		  font-family: Arial, sans-serif;
-		  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+		  background: linear-gradient(to right, #1f2490, #2E2FA2);
 		  color: white;
 		  display: flex;
 		  justify-content: center;
@@ -80,18 +80,21 @@
 	<h3>UGE 4G</h3>
 
 	<p>Por favor, introduce tu número de operario:</p>
-
+	<p>y pulsa Acceder</p>
+	
 	<input type="text" id="operario" placeholder="Ej: 1234">
 	
 	<button onclick="validar()">Acceder</button> <!cuando se hace click, ejecuta la funcion validar>
 	
-	<p id="error" style="color:#ff6b6b; margin-top:10px; display:none;">
-	Número de operario no autorizado
+	<p id="error" style="color:#ff3b3b; margin-top:10px; display:none;"> <!display:none oculta el mensaje al inicio>
+	Número de Operario incorrecto
 	</p>
-
-	<div class="footer">
-      Acceso restringido
-	</div>
+	
+	<!No me convence que salga esto lo dejo quitado>	
+	<!<div class="footer">
+    <!  Acceso restringido>
+	<!</div>
+	
   </div>
 
 	<script>
