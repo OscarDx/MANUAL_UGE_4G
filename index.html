@@ -4,33 +4,68 @@
 	<meta charset="UTF-8"> <!evita errores con tildes y demás>
 	<title>UGE 4G - Acceso Manual</title> <!título de la pestaña>
 	  
-	<style>
-	<!
-	  body {
-		 font-family: Arial;
-		 text-align: center;
-		 margin-top: 100px;
-	   }
-	>
-	body {
-	  margin: 0;
-	  font-family: Arial;
-	  background: linear-gradient(to right, #1f2490, #2E2FA2);
-	  color: white;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  height: 100vh;
-	}
-	   input {
-		 padding: 10px;
-		 font-size: 16px;
-	   }
-	   button {
-		 padding: 10px 20px;
-		 font-size: 16px;
-		 margin-top: 10px;
-	   }
+	<style> <!diseño en cuanto a colores, tamaños...>
+		body {
+		  margin: 0;
+		  font-family: Arial, sans-serif;
+		  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+		  color: white;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  height: 100vh;
+		}
+
+		.container { <!bloque de estilo1>
+		  background: #ffffff10;
+		  backdrop-filter: blur(10px);
+		  padding: 40px;
+		  border-radius: 15px;
+		  text-align: center;
+		  width: 300px;
+		  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+		}
+
+		h2 {
+		  margin-bottom: 10px;
+		}
+
+		h3 {
+		  margin-top: 0;
+		  font-weight: normal;
+		  color: #ccc;
+		}
+
+		input {
+		  width: 100%;
+		  padding: 12px;
+		  margin-top: 20px;
+		  border: none;
+		  border-radius: 8px;
+		  font-size: 16px;
+		}
+
+		button {
+		  width: 100%;
+		  padding: 12px;
+		  margin-top: 15px;
+		  border: none;
+		  border-radius: 8px;
+		  background-color: #00c6ff;
+		  color: white;
+		  font-size: 16px;
+		  cursor: pointer;
+		}
+
+		button:hover {
+		  background-color: #009ec3;
+		}
+
+		.footer { <!bloque de estilo2>
+		  margin-top: 20px;
+		  font-size: 12px;
+		  color: #aaa;
+		}
 		 
 
 
@@ -40,14 +75,20 @@
 
 <body> <!"lo que se ve">
 
+  <div class="container">
 	<h2>Equipo de Gestión de Emergencias</h2>
 	<h3>UGE 4G</h3>
 
 	<p>Por favor, introduce tu número de operario:</p>
 
 	<input type="text" id="operario" placeholder="Ej: 1234">
-	<br>
+	
 	<button onclick="validar()">Acceder</button> <!cuando se hace click, ejecuta la funcion validar>
+
+	<div class="footer">
+      Acceso restringido
+	</div>
+  </div>
 
 	<script>
 	function validar() {
@@ -75,7 +116,8 @@
 
 	  if (operarios_validos.includes(input)) {
 		window.location.href = "Manual UGE _4G_v01_24.pdf";
-	  } else {
+	  } 
+	  else {
 		alert("NÚMERO DE OPERARIO INCORRECTO.");
 	  }
 	}
