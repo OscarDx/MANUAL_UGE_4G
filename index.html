@@ -39,9 +39,15 @@
 		  font-weight: bold;
 		  letter-spacing: 2px;
 		  color: #B7D300;
-		  margin-bottom: 20px;
+		  margin-bottom: 30px;
+		}		
+		
+		.texto-ayuda {
+		  font-size: 14px;
+		  color: #ffffff;
+		  margin-top: 15px;
+		  line-height: 1.4;
 		}
-
 
 		input {
 		  width: 100%;
@@ -87,9 +93,10 @@
 	<h2>Equipo de Gestión de Emergencias</h2>
 	<h3>UGE 4G</h3>
 
-	<p>Por favor, introduce tu número de operario:</p>
-	<p>y pulsa Acceder</p>
-	
+	<p class="texto-ayuda">
+	Introduce tu Número de Operario y pulsa "Acceder"
+	</p>
+
 	<input type="text" id="operario" placeholder="Ej: 1234">
 	
 	<button onclick="validar()">Acceder</button> <!-- cuando se hace click, ejecuta la funcion validar -->
