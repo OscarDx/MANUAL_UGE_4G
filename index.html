@@ -1,8 +1,8 @@
-<!DOCTYPE html> <!para indicar al navegador que es una pagina web>
+<!DOCTYPE html> /* para indicar al navegador que es una pagina web */
 <html lang="es">
-<head> <!"lo que no se ve">
-	<meta charset="UTF-8"> <!evita errores con tildes y demás>
-	<title>UGE 4G - Acceso Manual</title> <!título de la pestaña>
+<head> /* "lo que no se ve" */
+	<meta charset="UTF-8"> /* evita errores con tildes y demás */
+	<title>UGE 4G - Acceso Manual</title> /* título de la pestaña */
 	  
 	<style> /* diseño en cuanto a colores, tamaños... */
 		body {
@@ -17,7 +17,7 @@
 		  height: 100vh;
 		}
 
-		.container { <!bloque de estilo1>
+		.container { /* bloque de estilo1 */
 		  background: #ffffff10;
 		  backdrop-filter: blur(10px);
 		  padding: 40px;
@@ -62,7 +62,7 @@
 		  background-color: #009ec3;
 		}
 
-		.footer { <!bloque de estilo2>
+		.footer { /* bloque de estilo2 */
 		  margin-top: 20px;
 		  font-size: 12px;
 		  color: #aaa;
@@ -74,7 +74,7 @@
   
 </head>
 
-<body> <!"lo que se ve">
+<body> /* "lo que se ve" */
 
   <div class="container">
 	<h2>Equipo de Gestión de Emergencias</h2>
@@ -85,16 +85,16 @@
 	
 	<input type="text" id="operario" placeholder="Ej: 1234">
 	
-	<button onclick="validar()">Acceder</button> <!cuando se hace click, ejecuta la funcion validar>
+	<button onclick="validar()">Acceder</button> /* cuando se hace click, ejecuta la funcion validar */
 	
-	<p id="error" style="color:#ff3b3b; margin-top:10px; display:none;"> <!display:none oculta el mensaje al inicio>
+	<p id="error" style="color:#ff3b3b; margin-top:10px; display:none;"> /* display:none oculta el mensaje al inicio */
 	Número de Operario incorrecto
 	</p>
 	
-	<!No me convence que salga esto lo dejo quitado>	
-	<!<div class="footer">
-    <!  Acceso restringido>
-	<!</div>
+	No me convence que salga esto lo dejo quitado>
+	<div class="footer">
+      Acceso restringido
+	</div>
 	
   </div>
 
