@@ -28,14 +28,14 @@
 		}
 		
 		h2 {
-		  font-size: 20px;
+		  font-size: 24px;
 		  font-weight: normal;
 		  color: #cccccc;
 		  margin-bottom: 2px;
 		}
 		
 		h3 {
-		  font-size: 30px;
+		  font-size: 35px;
 		  font-weight: bold;
 		  letter-spacing: 2px;
 		  color: #B7D300;
@@ -43,7 +43,7 @@
 		}		
 		
 		.texto-ayuda {
-		  font-size: 18px;
+		  font-size: 16px;
 		  color: #ffffff;
 		  margin-top: 15px;
 		  line-height: 1.4;
@@ -51,6 +51,7 @@
 
 		input {
 		  width: 100%;
+		  box-sizing: border-box;
 		  padding: 12px;
 		  margin-top: 20px;
 		  border: none;
@@ -60,6 +61,7 @@
 
 		button {
 		  width: 100%;
+		  box-sizing: border-box;
 		  padding: 12px;
 		  margin-top: 15px;
 		  border: none;
@@ -97,11 +99,11 @@
 	Introduce tu Número de Operario y pulsa "Acceder"
 	</p>
 
-	<input type="text" id="operario" placeholder="Ej: 1234">
+	<input type="text" id="operario" placeholder="Ej: 1234"> <!--text permite introducir texto libre, se podria pensar en ser mas estricto-->
 	
 	<button onclick="validar()">Acceder</button> <!-- cuando se hace click, ejecuta la funcion validar -->
 	
-	<p id="error" style="color:#ff3b3b; margin-top:10px; display:none;"> <!-- display:none oculta el mensaje al inicio -->
+	<p id="error" style="color:#ff2b2b; margin-top:10px; font-weight:bold; display:none;"> <!-- display:none oculta el mensaje al inicio -->
 	Número de Operario incorrecto
 	</p>
 	
