@@ -61,19 +61,19 @@
 		  margin-top: 20px;
 		  border: none;
 		  border-radius: 8px;
-		  font-size: 16px;
+		  font-size: 18px;
 		}
 
 		button {
 		  width: 100%;
 		  box-sizing: border-box;
-		  padding: 12px;
+		  padding: 14px;
 		  margin-top: 15px;
 		  border: none;
 		  border-radius: 8px;
 		  background-color: #B7D300;
 		  color: #1f2490;
-		  font-size: 16px;
+		  font-size: 18px;
 		  cursor: pointer;
 		  font-weight: bold;
 		}
@@ -107,8 +107,11 @@
 	Introduce tu Número de Operario y pulsa "Acceder"
 	</p>
 
-	<input type="text" id="operario" placeholder="Ej: 1234" inputmode="numeric"> <!--text permite introducir texto libre, se podria pensar en ser mas estricto-->
-																				 <!--inputmode activa el teclado numero automaticamente-->
+	<input type="text" id="operario" placeholder="Ej: 1234" inputmode="numeric" onkeypress="if(event.key==='Enter'){validar();}> 
+	<!--text permite introducir texto libre, se podria pensar en ser mas estricto-->
+	<!--inputmode activa el teclado numero automaticamente-->
+	<!--onkeypress: solamente dando a enter se ejecuta validad, es decir, es lo mismo que pinchar en acceder-->
+	
 	<button onclick="validar()">Acceder</button> <!-- cuando se hace click, ejecuta la funcion validar -->
 	
 	<p id="error" style="color:#ff2b2b; margin-top:10px; font-weight:bold; display:none;"> <!-- display:none oculta el mensaje al inicio -->
