@@ -1,7 +1,8 @@
 <!DOCTYPE html> <!-- para indicar al navegador que es una pagina web -->
 <html lang="es">
 <head> <!-- "lo que no se ve" -->
-	<meta charset="UTF-8"> <!-- evita errores con tildes y demás -->
+	<meta charset="UTF-8"> <!-- charset evita errores con tildes y demás -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<title>UGE 4G - Acceso Manual</title> <!-- título de la pestaña -->
 	  
 	<style> /* diseño en cuanto a colores, tamaños... */
@@ -9,12 +10,14 @@
 		  margin: 0;
 		  font-family: Arial, sans-serif;
 		  background: linear-gradient(to right, #1f2490, #2E2FA2);
-		  /* background: red; */
 		  color: white;
 		  display: flex;
 		  justify-content: center;
-		  align-items: center;
-		  height: 100vh;
+		  /*  align-items: center; */
+		  align-items: flex-start;
+		  /* height: 100vh; */	  
+		  min-height: 100vh;
+		  padding-top: 40px;
 		}
 
 		.container { /* bloque de estilo1 */
@@ -23,7 +26,7 @@
 		  padding: 40px;
 		  border-radius: 15px;
 		  text-align: center;
-		  <!--width: 300px;-->  
+		  /*width: 300px;*/ 
 		  width: 90%;
           max-width: 400px;
 		  box-shadow: 0 0 20px rgba(0,0,0,0.5);
