@@ -98,14 +98,20 @@
 		  color: #aaa;
 		}
 		 
-
+		iframe {
+			border: none;
+		}
 
 	</style>
   
 </head>
 
 <body> <!--  "lo que se ve" -->
+	
 
+  manual.pdf#toolbar=0">
+  </iframe>
+	
   <div class="container">
   
 	<!--<img src="Logo_Duplex_sinfondo.png" alt="Logo DUPLEX" class="logo"> No queda del todo bien el logo-->
@@ -135,6 +141,8 @@
   </div>
 
 	<script>
+	document.addEventListener('contextmenu', e => e.preventDefault());
+	
 	function validar() {
 
 	  const operarios_validos = [ <!--Mi numero de operario es 808-->
