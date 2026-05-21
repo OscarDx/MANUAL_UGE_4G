@@ -99,10 +99,14 @@
 		}
 		 
 		iframe {
-		  border: none;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
 		  width: 100%;
-		  height: 80vh;
+		  height: 100%;
+		  border: none;
 		}
+
 
 	</style>
   
@@ -164,31 +168,36 @@
 		"1912","1913","1917","1918","1920","1922","1938","1940","1943","4005","4006","4009","4010","4011","4013","4015","4017",
 		"4018","4021","4022","4023","4025","4026","4028","4031","4034","4036","4039","4042","4049","4060","4061","4068",
 		"4069","4073","4074","4076","4079","4081","4082","4083","4093","4096","Oscar Moreno"
-	];
+	 ];
 
-	  <!--const input = document.getElementById("operario").value;-->
-	  var operario = document.getElementById("operario").value;
+	 <!--const input = document.getElementById("operario").value;-->
+	 var operario = document.getElementById("operario").value;
 	  
-	  <!--if (operarios_validos.includes(input)) { -->
-	  <!--window.location.href = "Manual_UGE_4G_v01_24.pdf"; -->
-	  <!--} -->	  
-	  if (operarios_validos.includes(operario)) {
+	 <!--if (operarios_validos.includes(input)) { -->
+	 <!--window.location.href = "Manual_UGE_4G_v01_24.pdf"; -->
+	 <!--} -->	  
+	 if (operarios_validos.includes(operario)) {
 
-	   // Mostrar PDF
-		var visor = document.getElementById("visorPDF");
+		// Mostrar PDF
+    	var visor = document.getElementById("visorPDF");
 		visor.style.display = "block";
 		visor.src = "Manual_UGE _4G_v01_24.pdf#toolbar=0";
 
 		// Ocultar formulario
 		document.querySelector(".container").style.display = "none";
-	  }
+		
+		<!-- mejorar visualizacion en el movil
+		document.body.style.display = "block";
+		document.body.style.paddingTop = "0";
 
-	  <!--else {
-	  <!-- document.getElementById("error").style.display = "block";
-	  <!--}
-	  else {
+	 }
+
+	 <!--else {
+	 <!-- document.getElementById("error").style.display = "block";
+	 <!--}
+	 else {
 		document.getElementById("error").style.display = "block";
-	  }
+	 }
 
 	}
 	</script>
