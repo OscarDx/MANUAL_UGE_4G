@@ -170,14 +170,14 @@
 	  var operario = document.getElementById("operario").value;
 	  
 	  <!--if (operarios_validos.includes(input)) { -->
-	  <!--window.location.href = "Manual UGE _4G_v01_24.pdf"; -->
+	  <!--window.location.href = "Manual_UGE_4G_v01_24.pdf"; -->
 	  <!--} -->	  
 	  if (operarios_validos.includes(operario)) {
 
 	   // Mostrar PDF
 		var visor = document.getElementById("visorPDF");
 		visor.style.display = "block";
-		visor.src = "manual.pdf#toolbar=0";
+		visor.src = "Manual_UGE_4G_v01_24.pdf#toolbar=0";
 
 		// Ocultar formulario
 		document.querySelector(".container").style.display = "none";
