@@ -8,9 +8,14 @@
 	<title>Manual</title>
 
 	<script>
-		<!-- ⚠️ CONTROL DE ACCESO -->
+		
+		// CONTROL DE ACCESO 
 		if (sessionStorage.getItem("ok") !== "1") {
 		  window.location.href = "index.html";
+		}
+		else{
+			// borrar acceso al entrar al login
+			sessionStorage.removeItem("ok");
 		}
 	</script>
 
