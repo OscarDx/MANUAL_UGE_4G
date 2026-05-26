@@ -157,15 +157,13 @@
 		"4069","4073","4074","4076","4079","4081","4082","4083","4093","4096","Oscar Moreno"
 	 ];
 
-	 var operario = document.getElementById("operario").value;
+	 const input = document.getElementById("operario").value;
 	  
-	 if (operarios_validos.includes(operario)) {
-		// marcar que ha validado
-		sessionStorage.setItem("ok", "1");
-		// ir a otra página
-		window.location.href = "visor.html";
-	 }
-	 else {
+	 if (operarios_validos.includes(input)) { 
+		window.location.href = "Manual_UGE_4G_v01_24.pdf";
+	 } 	  
+
+	 else{
 		document.getElementById("error").style.display = "block";
 	 }
 
