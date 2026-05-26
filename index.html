@@ -134,8 +134,6 @@
 
 	<script>
 	
-	<!--document.addEventListener('contextmenu', e => e.preventDefault());-->
-	
 	function validar() {
 
 	  const operarios_validos = [ <!--Mi numero de operario es 808-->
@@ -157,7 +155,7 @@
 		"4069","4073","4074","4076","4079","4081","4082","4083","4093","4096","Oscar Moreno"
 	 ];
 
-	 const operario = document.getElementById("operario").value;
+	 var operario = document.getElementById("operario").value;
 	  
 	 if (operarios_validos.includes(operario)) {
 		// marcar que ha validado
