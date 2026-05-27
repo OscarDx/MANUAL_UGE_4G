@@ -27,7 +27,13 @@
 		  else {
 			//setTimeout(funcion,tiempo)
 			// Si aún es válido porque queda tiempo puedes verlo, pero ejecuta lo mismo que antes dentro de X tiempo (restante)			
-			setTimeout( () => { sessionStorage.removeItem("ok"); window.location.href = "index.html"; }, restante);
+			setTimeout(() => {
+
+			  document.getElementById("mensaje").style.display = "block";
+			  setTimeout(() => {
+				sessionStorage.removeItem("ok"); window.location.href = "index.html";}, 2000); // espera 2 segundos antes de salir
+
+			}, restante);
 		  }
 		}
 
@@ -48,6 +54,22 @@
 
 <body>
 	
+	<div id="mensaje" 
+	 style="
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  background: red;
+	  color: white;
+	  text-align: center;
+	  padding: 10px;
+	  display: none;
+	  z-index: 1000;
+	 ">
+	  La sesión ha expirado
+	</div>
+
 	<!-- embed: Mostrar el pdf dentro de la pagina -->
 	<embed src="Manual_UGE_4G_v01_24.pdf"> 
 
