@@ -157,20 +157,22 @@
 
 	 var operario = document.getElementById("operario").value;
 	  
-	 if (operarios_validos.includes(operario)) {
-		// marcar que ha validado
-		sessionStorage.setItem("ok", "1");
-		// enlace para ir a otra página, de esta forma la direccion vista sera https://...../visor.html
-		//Siempre llegas al login, no ves el pdf directamente
+	 if (operarios_validos.includes(operario)) { <!-- si el operario introducido esta en la lista
+	 
+		<!-- guarda el permiso para un Operario validado. En vez guardar un 1, guarda la hora en milisegundos. 
+		sessionStorage.setItem("ok", Date.now()); <!--  Entonces tendremos "ok" = 17160001-->
+		
+		<!--Cambia de pagina, enlace para ir a otra página. -->
+		<!--Siempre llegas al login, no ves el pdf directamentede y la direccion vista sera https://...../visor.html -->
 		window.location.href = "visor.html";
 	 }
+	 
 	 else {
 		document.getElementById("error").style.display = "block";
 	 }
 
 	}
 	</script>
-
 
 
 </body>
