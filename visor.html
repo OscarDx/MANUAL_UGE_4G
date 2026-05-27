@@ -17,22 +17,25 @@
 		} 
 		else {
 		  const actual = Date.now();
-		  const restante = 40000 - (actual - tiempo); // Tenemos el tiempo que queda de la sesión (40segundos)
+		  const inicio = parseInt(tiempo);
+		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40segundos)
 
 		  // Si ya está caducado porque pasó el tiempo
 		  if (restante <= 0) {
-			sessionStorage.removeItem("ok"); //Se borra el acceso
-			window.location.href = "index.html"; //Te echa al login
+		  
+		    document.getElementById("mensaje").style.display = "block"; //muestra aviso
+			
+		    //setTimeout(funcion,tiempo
+			setTimeout(() => { sessionStorage.removeItem("ok"); window.location.href = "index.html"; }, 2000);
+
 		  } 
 		  else {
 			//setTimeout(funcion,tiempo)
 			// Si aún es válido porque queda tiempo puedes verlo, pero ejecuta lo mismo que antes dentro de X tiempo (restante)			
 			setTimeout(() => {
-
 			  document.getElementById("mensaje").style.display = "block";
 			  setTimeout(() => {
 				sessionStorage.removeItem("ok"); window.location.href = "index.html";}, 10000); // espera 10 segundos antes de salir
-
 			}, restante);
 		  }
 		}
