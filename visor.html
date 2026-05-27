@@ -9,33 +9,35 @@
 
 	<script>
 		
+		//Buscamos en el navegador si hay sesiones guardas:
 		const tiempo = sessionStorage.getItem("ok"); //Si no se ha validado tiempo=NULL y si SÍ pues la hora en la que se validó (en ms)
 
-		//Si NO has validado sesión te echa al login, le dice al navegador que abra esa direccion
+		//Si NO has validado sesión te echa al login y fin; le dice al navegador que abra esa direccion
 		if (!tiempo) {
 		  window.location.href = "index.html";
 		} 
+		
 		else {
+		  //Calcular el tiempo que queda de sesión
 		  const actual = Date.now();
 		  const inicio = parseInt(tiempo);
-		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40segundos)
+		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40seg de limite)
 
-		  // Si ya está caducado porque pasó el tiempo
+		  // Si ya está caducado porque pasó el tiempo...
 		  if (restante <= 0) {
 		  
-		    document.getElementById("mensaje").style.display = "block"; //muestra aviso
+		    document.getElementById("mensaje").style.display = "block"; //...muestra aviso
 			
-		    //setTimeout(funcion,tiempo
+		    //setTimeout({funcion},tiempo)- Borrar y te echa al login tras 2seg
 			setTimeout(() => { sessionStorage.removeItem("ok"); window.location.href = "index.html"; }, 2000);
 
 		  } 
-		  else {
-			//setTimeout(funcion,tiempo)
-			// Si aún es válido porque queda tiempo puedes verlo, pero ejecuta lo mismo que antes dentro de X tiempo (restante)			
+		  else { //Si aun no ha caducado porque estas dentro del tiempo valido, se programa una caducidad (restante)			
+			//setTimeout({funcion},tiempo)
 			setTimeout(() => {
 			  document.getElementById("mensaje").style.display = "block";
 			  setTimeout(() => {
-				sessionStorage.removeItem("ok"); window.location.href = "index.html";}, 10000); // espera 10 segundos antes de salir
+				sessionStorage.removeItem("ok"); window.location.href = "index.html";}, 10000); // espera 10 segundos con el mensaje antes de echarte
 			}, restante);
 		  }
 		}
@@ -46,7 +48,6 @@
 		body {
 		  margin: 0;
 		}
-
 		embed {
 		  width: 100%;
 		  height: 100vh;
@@ -57,7 +58,7 @@
 
 <body>
 	
-	<div id="mensaje" 
+	<div id="mensaje" <!--El nombre del div es "mensaje" y configuramos el estilo del texto de expiración -->
 	 style="
 	  position: fixed;
 	  top: 0;
@@ -69,7 +70,7 @@
 	  padding: 15px;	  
       font-size: 20px;
       font-weight: bold;
-	  display: none;
+	  display: none; <!-- al principio no se ve mensaje -->
 	  z-index: 1000;
 	 ">
 	  La sesión ha expirado
