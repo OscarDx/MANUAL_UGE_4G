@@ -17,7 +17,7 @@
 		} 
 		else {
 		  const actual = Date.now();
-		  const restante = 60000 - (actual - tiempo); // Tenemos el tiempo que queda de la sesión (1 minuto)
+		  const restante = 40000 - (actual - tiempo); // Tenemos el tiempo que queda de la sesión (40segundos)
 
 		  // Si ya está caducado porque pasó el tiempo
 		  if (restante <= 0) {
@@ -31,7 +31,7 @@
 
 			  document.getElementById("mensaje").style.display = "block";
 			  setTimeout(() => {
-				sessionStorage.removeItem("ok"); window.location.href = "index.html";}, 5000); // espera 2 segundos antes de salir
+				sessionStorage.removeItem("ok"); window.location.href = "index.html";}, 10000); // espera 10 segundos antes de salir
 
 			}, restante);
 		  }
@@ -63,7 +63,9 @@
 	  background: red;
 	  color: white;
 	  text-align: center;
-	  padding: 10px;
+	  padding: 15px;	  
+      font-size: 20px;
+      font-weight: bold
 	  display: none;
 	  z-index: 1000;
 	 ">
