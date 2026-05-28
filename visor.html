@@ -25,14 +25,16 @@
 		  const actual = Date.now();
 		  const inicio = parseInt(tiempo);
 		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40seg de limite)
-
-		  //Añadir el mensaje del usuario activo en pantalla
+			
+		//cuando la pagina ya ha cargado...	
+		window.onload = function() {
+		  //...añadir el mensaje del usuario activo en pantalla
      	  const operario = sessionStorage.getItem("operario");
 		  if (operario) {
-			document.getElementById("InfoOperario").innerHTM =
-			  "Operario: " + operario + "| " + fecha "<br>Uso interno. Prohibido compartir";
+			document.getElementById("InfoOperario").innerHTML =
+			  "Operario: " + operario + "| " + fecha + "<br>Uso interno. Prohibido compartir";
 		  }
-
+		}
 		  // Si ya está caducado porque pasó el tiempo...
 		  if (restante <= 0) {
 		  
