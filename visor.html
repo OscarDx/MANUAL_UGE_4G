@@ -9,9 +9,12 @@
 
 	<script>
 		
+		//Guardar la fecha
+		const fecha = new Date().toLocaleString();
+		
 		//Buscamos en el navegador si hay sesiones guardas:
 		const tiempo = sessionStorage.getItem("ok"); //Si no se ha validado tiempo=NULL y si SÍ pues la hora en la que se validó (en ms)
-
+	
 		//Si NO has validado sesión te echa al login y fin; le dice al navegador que abra esa direccion
 		if (!tiempo) {
 		  window.location.href = "index.html";
@@ -22,6 +25,13 @@
 		  const actual = Date.now();
 		  const inicio = parseInt(tiempo);
 		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40seg de limite)
+
+		  //Añadir el mensaje del usuario activo en pantalla
+     	  const operario = sessionStorage.getItem("operario");
+		  if (operario) {
+			document.getElementById("infoOperario").textContent =
+			  "Operario: " + operario + "| " + fecha "<br>Uso interno. Prohibido compartir";
+		  }
 
 		  // Si ya está caducado porque pasó el tiempo...
 		  if (restante <= 0) {
@@ -76,9 +86,32 @@
 	 ">
 	  La sesión ha expirado
 	</div>
+	
+	
+	<div id="InfoOperario" style="
+	  position: fixed;
+	  bottom: 10px;
+	  right: 10px;
+	  background: rgba(0,0,0,0.6);
+	  color: white;
+	  padding: 8px;
+	  font-size: 14px;
+	  border-radius: 5px;
+	  z-index: 1000;
+	">
+	</div>
+
 
 	<!-- embed: Mostrar el pdf dentro de la pagina -->
 	<embed src="Manual_UGE_4G_v01_24.pdf"> 
 
 </body>
 </html>
+
+
+  const operario = sessionStorage.getItem("operario");
+
+  if (operario) {
+    document.getElementById("infoOperario").textContent =
+      "Operario: " + operario + "| " + fecha;
+  }
