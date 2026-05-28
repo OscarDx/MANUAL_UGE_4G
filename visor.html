@@ -29,7 +29,7 @@
 		  //Añadir el mensaje del usuario activo en pantalla
      	  const operario = sessionStorage.getItem("operario");
 		  if (operario) {
-			document.getElementById("infoOperario").textContent =
+			document.getElementById("InfoOperario").innerHTM =
 			  "Operario: " + operario + "| " + fecha "<br>Uso interno. Prohibido compartir";
 		  }
 
@@ -108,10 +108,3 @@
 </body>
 </html>
 
-
-  const operario = sessionStorage.getItem("operario");
-
-  if (operario) {
-    document.getElementById("infoOperario").textContent =
-      "Operario: " + operario + "| " + fecha;
-  }
