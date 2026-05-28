@@ -23,6 +23,8 @@
 		  const inicio = parseInt(tiempo);
 		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40seg de limite)
 
+		  document.getElementById("visorPDF").src = "Manual_UGE_4G_v01_24.pdf";
+
 		  // Si ya está caducado porque pasó el tiempo...
 		  if (restante <= 0) {
 		  
@@ -51,8 +53,15 @@
 		embed {
 		  width: 100%;
 		  height: 100vh;
+		}		
+		
+		iframe {
+		  width: 100%;
+		  height: 100vh;
+		  border: none;
 		}
 	</style>
+
 
 </head>
 
@@ -78,7 +87,9 @@
 	</div>
 
 	<!-- embed: Mostrar el pdf dentro de la pagina -->
-	<embed src="Manual_UGE_4G_v01_24.pdf"> 
+	<!-- <embed src="Manual_UGE_4G_v01_24.pdf">  -->
+
+	<iframe id="visorPDF"></iframe>
 
 </body>
 </html>
