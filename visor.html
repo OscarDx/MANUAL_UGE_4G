@@ -23,7 +23,9 @@
 		  const inicio = parseInt(tiempo);
 		  const restante = 40000 - (actual - inicio); // Tenemos el tiempo que queda de la sesión (40seg de limite)
 
-		  document.getElementById("visorPDF").src = "Manual_UGE_4G_v01_24.pdf";
+			window.onload = function() {
+			  document.getElementById("visorPDF").src = "Manual_UGE_4G_v01_24.pdf";
+			};
 
 		  // Si ya está caducado porque pasó el tiempo...
 		  if (restante <= 0) {
